@@ -1,0 +1,28 @@
+.item {
+	max-height: 0px;
+	background-color: rgba(46, 46, 46, 0);
+	border: 2px solid rgb(66, 66, 66);
+	border-width: 0 0 0 2px;
+	-webkit-padding-start: 20px;
+	padding-inline-start: 20px;
+	transition: all 2s ease-in;
+	width: 240px;
+	margin-bottom: 2rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	// Empty State
+	&:empty {
+		max-height: 0px;
+		background-color: rgba(128, 128, 128, 0);
+		transition: all 1s ease-in;
+	}
+
+	//  Show State
+	&.show {
+		max-height: 9999px;
+		transition: max-height 1s ease-in;
+	}
+}
