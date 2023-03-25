@@ -57,3 +57,62 @@ details {
 .accord > * + * {
 	margin-top: 1rem;
 }
+
+.nav-list {
+	list-style: none;
+	margin: 0;
+
+	//  Direct Children
+	& > * + * {
+		margin-top: 0.5rem;
+	}
+
+	// link Styles
+	a {
+		text-decoration: none;
+	}
+
+	// nav-item tab
+	.nav-item {
+		background-color: bisque;
+		padding: 1rem 2rem;
+		max-width: 400px;
+		border-radius: 8px;
+		cursor: pointer;
+		max-height: 20px;
+		overflow-y: hidden;
+		transition: max-height 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+		&:active {
+			color: white;
+			background-color: hsl(110, 8%, 15%);
+			a {
+				color: white;
+			}
+		}
+
+		&:has(.sub-item:empty) .icon {
+			display: none;
+		}
+
+		&.show {
+			max-height: 400px;
+			transition: max-height 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		}
+
+		// label
+		.label {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		// Sub-item menu
+		.sub-item {
+			margin-top: 2rem;
+
+			&:empty {
+				display: none;
+			}
+		}
+	}
+}
